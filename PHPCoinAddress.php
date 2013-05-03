@@ -25,7 +25,7 @@ Notes:
 
 License:
 
-Copyright (C) 2013 CoinAddress Developers
+Copyright (C) 2013 PHPCoinAddress Developers
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the "Software"),
