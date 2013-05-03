@@ -12,7 +12,7 @@ Version 0.1.0
 
 Usage:
 
-require_once 'CoinAddress.php';
+require_once 'PHPCoinAddress.php';
 // CoinAddress::set_debug(true);      // optional - show debugging messages
 // CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
 $coin = CoinAddress::bitcoin();
