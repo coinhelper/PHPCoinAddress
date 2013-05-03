@@ -8,7 +8,7 @@ Version 0.1.0
 Usage:
 ==============
 <pre>
-require_once 'CoinAddress.php'; 
+require_once 'PHPCoinAddress.php'; 
 // CoinAddress::set_debug(true);      // optional - show debugging messages 
 // CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses 
 $coin = CoinAddress::bitcoin(); 
@@ -22,7 +22,7 @@ Notes:
 
 License:
 ==============
-Copyright (C) 2013 CoinAddress Developers
+Copyright (C) 2013 PHPCodeAddress Developers
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the "Software"),
