@@ -8,11 +8,11 @@ Version 0.1.0
 Usage:
 ==============
 
-require_once 'CoinAddress.php';
-// CoinAddress::set_debug(true);      // optional - show debugging messages
-// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
-$coin = CoinAddress::bitcoin();
-print 'Bitcoin:  Public Address: ' . $coin['public'] . '  Private Address: ' . $coin['private'];
+ require_once 'CoinAddress.php';
+ // CoinAddress::set_debug(true);      // optional - show debugging messages
+ // CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
+ $coin = CoinAddress::bitcoin();
+ print 'Bitcoin:  Public Address: ' . $coin['public'] . '  Private Address: ' . $coin['private'];
 
 
 Notes:
