@@ -7,7 +7,7 @@ PHPCoinAddress - Cryptocoin address creator
 
 - Stand alone, single file, static PHP object
 
-Version 0.1.0
+Version 0.1.1
 
 
 Usage:
@@ -112,23 +112,23 @@ class CoinAddress {
         public static $key_pair_public;
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function set_debug( $s='' ) { if( $s ) { self::$debug = true; } else { self::$debug = false; }  }
-        public function set_reuse_keys( $s='' ) { if( $s ) { self::$reuse_keys = true; } else { self::$reuse_keys = false; }  }
+        public static function set_debug( $s='' ) { if( $s ) { self::$debug = true; } else { self::$debug = false; }  }
+        public static function set_reuse_keys( $s='' ) { if( $s ) { self::$reuse_keys = true; } else { self::$reuse_keys = false; }  }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function bitcoin() {  return self::get_address( $prefix_public = '0x00', $prefix_private = '0x80' ); }
-        public function namecoin() { return self::get_address( $prefix_public = '0x34', $prefix_private = '0xB4' ); }
-        public function litecoin() { return self::get_address( $prefix_public = '0x30', $prefix_private = '0xB0' ); }
-        public function ppcoin() {   return self::get_address( $prefix_public = '0x37', $prefix_private = '0xb7' ); }
+        public static function bitcoin() {  return self::get_address( $prefix_public = '0x00', $prefix_private = '0x80' ); }
+        public static function namecoin() { return self::get_address( $prefix_public = '0x34', $prefix_private = '0xB4' ); }
+        public static function litecoin() { return self::get_address( $prefix_public = '0x30', $prefix_private = '0xB0' ); }
+        public static function ppcoin() {   return self::get_address( $prefix_public = '0x37', $prefix_private = '0xb7' ); }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function bitcoin_testnet() {  return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
-        public function namecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
-        public function litecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
-        public function ppcoin_testnet() {   return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
+        public static function bitcoin_testnet() {  return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
+        public static function namecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
+        public static function litecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
+        public static function ppcoin_testnet() {   return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function get_address( $prefix_public, $prefix_private ) {
+        public static function get_address( $prefix_public, $prefix_private ) {
                 self::debug('get_address: prefix public:' . $prefix_public . ' private:' . $prefix_private);
                 self::setup();
                 if( !self::$key_pair_public || !self::$key_pair_private ) {
@@ -146,10 +146,10 @@ class CoinAddress {
         } // end get_address
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function debug($m='') { if( !self::$debug ) { return; } echo "DEBUG: ",  print_r($m,1), "\n"; }
+        public static function debug($m='') { if( !self::$debug ) { return; } echo "DEBUG: ",  print_r($m,1), "\n"; }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function setup() {
+        public static function setup() {
                 if( !isset(self::$secp256k1) ) {
                   self::debug('setup: CurveFp');
                   self::$secp256k1 = new CurveFp( '115792089237316195423570985008687907853269984665640564039457584007908834671663', '0', '7');
@@ -166,7 +166,7 @@ class CoinAddress {
         } // END setup
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function create_key_pair() {
+        public static function create_key_pair() {
                 self::debug('create_key_pair');
                 $privBin = '';
                 for ($i = 0; $i < 32; $i++) { $privBin .= chr(mt_rand(0, $i ? 0xff : 0xfe)); }
@@ -187,7 +187,7 @@ class CoinAddress {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         // modded from https://en.bitcoin.it/wiki/Base58Check_encoding
-        function base58check_encode($leadingByte, $bin, $trailingByte = null) {
+        public static function base58check_encode($leadingByte, $bin, $trailingByte = null) {
                 self::debug('base58check_encode: leadingByte: ' . $leadingByte);
                 $bin = chr($leadingByte) . $bin;
                 if ($trailingByte !== null) { $bin .= chr($trailingByte); }
@@ -204,7 +204,7 @@ class CoinAddress {
         } // end base58check_encode
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function base58_encode($num) {
+        public static function base58_encode($num) {
                 self::debug('base58_encode: num: ' . $num);
                 return bcmath_Utils::dec2base($num, 58, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
         } // end base58_encode
