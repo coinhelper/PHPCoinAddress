@@ -3,11 +3,11 @@
 
 PHPCoinAddress - Cryptocoin address creator
 
-- public/private addresses for: Bitcoin, Namecoin, Litecoin, PPCoin
+- public/private addresses for: Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin
 
 - Stand alone, single file, static PHP object
 
-Version 0.1.1
+Version 0.1.2
 
 
 Usage:
@@ -120,13 +120,15 @@ class CoinAddress {
         public static function namecoin() { return self::get_address( $prefix_public = '0x34', $prefix_private = '0xB4' ); }
         public static function litecoin() { return self::get_address( $prefix_public = '0x30', $prefix_private = '0xB0' ); }
         public static function ppcoin() {   return self::get_address( $prefix_public = '0x37', $prefix_private = '0xb7' ); }
+        public static function devcoin() {  return self::bitcoin(); }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function bitcoin_testnet() {  return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
-        public static function namecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
-        public static function litecoin_testnet() { return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
-        public static function ppcoin_testnet() {   return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); } // ??
-
+        public static function namecoin_testnet() { return self::bitcoin_testnet(); } // ??
+        public static function litecoin_testnet() { return self::bitcoin_testnet(); }
+        public static function ppcoin_testnet() {   return self::bitcoin_testnet(); } // ??
+        public static function devcoin_testnet() {  return self::bitcoin_testnet(); }
+        
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function get_address( $prefix_public, $prefix_private ) {
                 self::debug('get_address: prefix public:' . $prefix_public . ' private:' . $prefix_private);
