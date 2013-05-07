@@ -23,6 +23,7 @@ Notes:
 ==============
 - modded from https://gist.github.com/scintill/3549107
 - includes elliptic curve cryptography (ECC) libraries from https://github.com/mdanter/phpecc
+- requires PHP extension BCMATH or GMP.  (GMP is much faster)
 
 License:
 ==============
