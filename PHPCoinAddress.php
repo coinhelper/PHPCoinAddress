@@ -102,55 +102,63 @@ class gmp_Utils {public static function gmp_mod2($n,$d){if(extension_loaded('gmp
 
 // START: CoinAddress class
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 class CoinAddress {
 
         public static $debug;
+        public static $reuse_keys;
         public static $secp256k1;
         public static $secp256k1_G;
-        public static $reuse_keys;
         public static $key_pair_private;
         public static $key_pair_public;
+        public static $prefix_private;
+        public static $prefix_public;
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function set_debug( $s='' ) { if( $s ) { self::$debug = true; } else { self::$debug = false; }  }
         public static function set_reuse_keys( $s='' ) { if( $s ) { self::$reuse_keys = true; } else { self::$reuse_keys = false; }  }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static function bitcoin() {  return self::get_address( $prefix_public = '0x00', $prefix_private = '0x80' ); }
-        public static function namecoin() { return self::get_address( $prefix_public = '0x34', $prefix_private = '0xB4' ); }
-        public static function litecoin() { return self::get_address( $prefix_public = '0x30', $prefix_private = '0xB0' ); }
-        public static function ppcoin() {   return self::get_address( $prefix_public = '0x37', $prefix_private = '0xb7' ); }
+        public static function bitcoin() {  self::$prefix_public = '0x00'; self::$prefix_private = '0x80'; return self::get_address(); }
+        public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
+        public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
+        public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xb7'; return self::get_address(); }
         public static function devcoin() {  return self::bitcoin(); }
 
+        public static function generic( $prefix_public='', $prefix_private='' ) {
+                self::debug("generic: public:$prefix_public private:$prefix_private");
+                if( !$prefix_public || !$prefix_private ) { print 'ERROR'; exit; } // need better error checking here...
+                self::$prefix_public = $prefix_public;
+                self::$prefix_private = $prefix_private;
+                return self::get_address();
+        }
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static function bitcoin_testnet() {  return self::get_address( $prefix_public = '0x6F', $prefix_private = '0xEF' ); }
+        public static function bitcoin_testnet() {  self::$prefix_public = '0x6F'; self::$prefix_private = '0xEF'; return self::get_address(); }
         public static function namecoin_testnet() { return self::bitcoin_testnet(); } // ??
         public static function litecoin_testnet() { return self::bitcoin_testnet(); }
         public static function ppcoin_testnet() {   return self::bitcoin_testnet(); } // ??
         public static function devcoin_testnet() {  return self::bitcoin_testnet(); }
-        
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static function get_address( $prefix_public, $prefix_private ) {
-                self::debug('get_address: prefix public:' . $prefix_public . ' private:' . $prefix_private);
+        public static function get_address() {
+                if( !self::$prefix_public || !self::$prefix_private ) { print 'ERROR'; exit; } // need better error checking here...
+                self::debug('get_address: prefix public:' . self::$prefix_public . ' private:' . self::$prefix_private);
                 self::setup();
                 if( !self::$key_pair_public || !self::$key_pair_private ) {
                         self::create_key_pair();
                 } elseif ( !self::$reuse_keys ) {
                         self::create_key_pair();
                 }
-                self::debug('get_address: encode key_pair_public: ' . bin2hex(self::$key_pair_public) );
-                $public  = self::base58check_encode( $prefix_public,  self::$key_pair_public );
-                self::debug('get_address: public: ' . $public);
-                self::debug('get_address: encode key_pair_private: ' . bin2hex(self::$key_pair_private) );
-                $private = self::base58check_encode( $prefix_private, self::$key_pair_private );
-                self::debug('get_address: private: ' . $private);
+                $public  = self::base58check_encode( self::$prefix_public,  self::$key_pair_public );
+                $private = self::base58check_encode( self::$prefix_private, self::$key_pair_private );
                 return array( 'public' => $public, 'private' => $private );
         } // end get_address
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function debug($m='') { if( !self::$debug ) { return; } echo "DEBUG: ",  print_r($m,1), "\n"; }
-
+       
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function setup() {
                 if( !isset(self::$secp256k1) ) {
