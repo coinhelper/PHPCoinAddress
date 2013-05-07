@@ -1,11 +1,10 @@
 PHPCoinAddress
 ==============
 
-PHPCoinAddress is a PHP object that creates public address/private key pairs for 
+PHPCoinAddress is a PHP object that creates public/private address key pairs for 
 Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
-Version 0.1.4
-
+Version 0.1.5
 
 Usage:
 ==============
