@@ -8,13 +8,16 @@ Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 Version 0.1.5
 
 ****************************************************************************
-Usage:
+Example Usage:
 
 require_once 'PHPCoinAddress.php';
 // CoinAddress::set_debug(true);      // optional - show debugging messages
-// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
-$coin = CoinAddress::bitcoin();
-print 'Bitcoin:  Public Address: ' . $coin['public'] . '  Private Address: ' . $coin['private'];
+// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses creations
+$coin = CoinAddress::bitcoin();  
+print "\nBITCOIN: (uncompressed)\n";
+print 'public: ' . $coin['public'] . "\n";
+print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
+print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
 
 ****************************************************************************
 Notes:
