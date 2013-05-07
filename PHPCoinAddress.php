@@ -110,7 +110,7 @@ class CoinAddress {
         public static $secp256k1;
         public static $secp256k1_G;
         public static $key_pair_private;
-		public static $key_pair_private_hex;
+	public static $key_pair_private_hex;
         public static $key_pair_public;
         public static $prefix_private;
         public static $prefix_public;
@@ -153,10 +153,10 @@ class CoinAddress {
                 }
                 $public  = self::base58check_encode( self::$prefix_public,  self::$key_pair_public );
                 $private = self::base58check_encode( self::$prefix_private, self::$key_pair_private );
-				$private_hex = self::$key_pair_private_hex;
-				self::debug("get_address: public: $public");
-				self::debug("get_address: private: $private");
-				self::debug("get_address: private_hex: $private_hex");
+		$private_hex = self::$key_pair_private_hex;
+		self::debug("get_address: public: $public");
+		self::debug("get_address: private: $private");
+		self::debug("get_address: private_hex: $private_hex");
                 return array( 'public' => $public, 'private' => $private, 'private_hex' => $private_hex );
         } // end get_address
 
@@ -165,8 +165,8 @@ class CoinAddress {
        
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function setup() {
-				//self::debug('setup');
-				self::debug('setup: USE_EXT: ' . USE_EXT);
+		//self::debug('setup');
+		self::debug('setup: USE_EXT: ' . USE_EXT);
                 if( !isset(self::$secp256k1) ) {
                   //self::debug('setup: CurveFp');
                   self::$secp256k1 = new CurveFp( '115792089237316195423570985008687907853269984665640564039457584007908834671663', '0', '7');
