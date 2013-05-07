@@ -2,10 +2,10 @@
 /* ****************************************************************************
 
 PHPCoinAddress 
-create public address/private key pairs for 
+create public/private address key pairs for:
 Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
-Version 0.1.4
+Version 0.1.5
 
 ****************************************************************************
 Usage:
@@ -110,13 +110,14 @@ class CoinAddress {
         public static $secp256k1;
         public static $secp256k1_G;
         public static $key_pair_private;
+		public static $key_pair_private_hex;
         public static $key_pair_public;
         public static $prefix_private;
         public static $prefix_public;
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function set_debug( $s='' ) { if( $s ) { self::$debug = true; } else { self::$debug = false; }  }
-        public static function set_reuse_keys( $s='' ) { if( $s ) { self::$reuse_keys = true; } else { self::$reuse_keys = false; }  }
+        public static function set_reuse_keys( $s='' ) { if( $s ) { self::$reuse_keys = true; self::debug('set_reuse_keys: true'); } else { self::$reuse_keys = false; }  }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function bitcoin() {  self::$prefix_public = '0x00'; self::$prefix_private = '0x80'; return self::get_address(); }
@@ -143,7 +144,7 @@ class CoinAddress {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function get_address() {
                 if( !self::$prefix_public || !self::$prefix_private ) { print 'ERROR'; exit; } // need better error checking here...
-                self::debug('get_address: prefix public:' . self::$prefix_public . ' private:' . self::$prefix_private);
+                self::debug('get_address: prefix: public:' . self::$prefix_public . ' private:' . self::$prefix_private);
                 self::setup();
                 if( !self::$key_pair_public || !self::$key_pair_private ) {
                         self::create_key_pair();
@@ -152,7 +153,11 @@ class CoinAddress {
                 }
                 $public  = self::base58check_encode( self::$prefix_public,  self::$key_pair_public );
                 $private = self::base58check_encode( self::$prefix_private, self::$key_pair_private );
-                return array( 'public' => $public, 'private' => $private );
+				$private_hex = self::$key_pair_private_hex;
+				self::debug("get_address: public: $public");
+				self::debug("get_address: private: $private");
+				self::debug("get_address: private_hex: $private_hex");
+                return array( 'public' => $public, 'private' => $private, 'private_hex' => $private_hex );
         } // end get_address
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,62 +165,61 @@ class CoinAddress {
        
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function setup() {
+				//self::debug('setup');
+				self::debug('setup: USE_EXT: ' . USE_EXT);
                 if( !isset(self::$secp256k1) ) {
-                  self::debug('setup: CurveFp');
+                  //self::debug('setup: CurveFp');
                   self::$secp256k1 = new CurveFp( '115792089237316195423570985008687907853269984665640564039457584007908834671663', '0', '7');
-                  self::debug('setup: secp256k1:' . print_r(self::$secp256k1,1) );
+                  //self::debug('setup: secp256k1:' . print_r(self::$secp256k1,1) );
                 }
                 if( !isset(self::$secp256k1_G) ) {
-                  self::debug('setup: Point');
+                  //self::debug('setup: Point');
                   self::$secp256k1_G = new Point(self::$secp256k1,
                   '55066263022277343669578718895168534326250603453777594175500187360389116729240',
                   '32670510020758816978083085130507043184471273380659243275938904335757337482424',
                   '115792089237316195423570985008687907852837564279074904382605163141518161494337');
-                  self::debug('setup: secp256k1_G: ' . self::$secp256k1_G );
+                  //self::debug('setup: secp256k1_G: ' . self::$secp256k1_G );
                 }
         } // END setup
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function create_key_pair() {
-                self::debug('create_key_pair');
+                //self::debug('create_key_pair');
                 $privBin = '';
                 for ($i = 0; $i < 32; $i++) { $privBin .= chr(mt_rand(0, $i ? 0xff : 0xfe)); }
-                self::debug('create_key_pair: privBin: ' . bin2hex($privBin));
-                //self::debug('create_key_pair: point');
                 $point = Point::mul(bcmath_Utils::bin2bc("\x00" . $privBin), self::$secp256k1_G);
-                self::debug('create_key_pair: point: ' . $point);
-                //self::debug('create_key_pair: pubBinStr');
+                //self::debug('create_key_pair: point: ' . $point);
                 $pubBinStr = "\x04" . str_pad(bcmath_Utils::bc2bin($point->getX()), 32, "\x00", STR_PAD_LEFT) .
                         str_pad(bcmath_Utils::bc2bin($point->getY()), 32, "\x00", STR_PAD_LEFT);
-                self::debug('create_key_pair: pubBinStr: ' . bin2hex($pubBinStr) );
+                //self::debug('create_key_pair: pubBinStr: ' . bin2hex($pubBinStr) );
                 self::$key_pair_public = hash('ripemd160', hash('sha256', $pubBinStr, true), true);
-                self::debug('create_key_pair: key_pair_public: ' . bin2hex(self::$key_pair_public) );
+                self::debug('create_key_pair: public: ' . bin2hex(self::$key_pair_public) );
                 self::$key_pair_private = $privBin;
-                self::debug('create_key_pair: key_pair_private: ' . bin2hex($privBin) );
-                //return array('public' => hash('ripemd160', hash('sha256', $pubBinStr, true), true), 'private' => $privBin);
+                self::$key_pair_private_hex = bin2hex($privBin);
+                self::debug('create_key_pair: private: ' . bin2hex($privBin) );
         } // end create_key_pair
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         // modded from https://en.bitcoin.it/wiki/Base58Check_encoding
         public static function base58check_encode($leadingByte, $bin, $trailingByte = null) {
-                self::debug('base58check_encode: leadingByte: ' . $leadingByte);
+                //self::debug('base58check_encode: leadingByte: ' . $leadingByte);
                 $bin = chr($leadingByte) . $bin;
                 if ($trailingByte !== null) { $bin .= chr($trailingByte); }
                 $checkSum = substr(hash('sha256', hash('sha256', $bin, true), true), 0, 4);
                 $bin .= $checkSum;
                 $base58 = self::base58_encode(bcmath_Utils::bin2bc($bin));
-                self::debug('base58check_encode: 1: base58: ' . $base58);
+                //self::debug('base58check_encode: 1: base58: ' . $base58);
                 for ($i = 0; $i < strlen($bin); $i++) { // for each leading zero-byte, pad the base58 with a "1"
                         if ($bin[$i] != "\x00") { break; /*  <-- exit; */ }
                         $base58 = '1' . $base58;
                 }
-                self::debug('base58check_encode: 2: base58: ' . $base58);
+                //self::debug('base58check_encode: base58: ' . $base58);
                 return $base58;
         } // end base58check_encode
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function base58_encode($num) {
-                self::debug('base58_encode: num: ' . $num);
+                //self::debug('base58_encode: num: ' . $num);
                 return bcmath_Utils::dec2base($num, 58, '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
         } // end base58_encode
 
