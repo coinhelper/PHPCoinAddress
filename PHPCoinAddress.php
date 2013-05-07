@@ -1,15 +1,13 @@
 <?php
 /* ****************************************************************************
 
-PHPCoinAddress - Cryptocoin address creator
+PHPCoinAddress 
+create public address/private key pairs for 
+Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
-- public/private addresses for: Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin
+Version 0.1.4
 
-- Stand alone, single file, static PHP object
-
-Version 0.1.3
-
-
+****************************************************************************
 Usage:
 
 require_once 'PHPCoinAddress.php';
@@ -18,11 +16,12 @@ require_once 'PHPCoinAddress.php';
 $coin = CoinAddress::bitcoin();
 print 'Bitcoin:  Public Address: ' . $coin['public'] . '  Private Address: ' . $coin['private'];
 
-
+****************************************************************************
 Notes:
 - modded from https://gist.github.com/scintill/3549107
 - includes elliptic curve cryptography (ECC) libraries from https://github.com/mdanter/phpecc
 
+****************************************************************************
 License:
 
 Copyright (C) 2013 PHPCoinAddress Developers
