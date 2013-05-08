@@ -163,7 +163,7 @@ class CoinAddress {
 		self::debug("get_address: public_hex: $public_hex");
 		self::debug("get_address: private: $private");
 		self::debug("get_address: private_hex: $private_hex");
-                return array( 'public' => $public, 'private' => $private, 'private_hex' => $private_hex );
+                return array( 'public' => $public, 'public_hex' => $public_hex, 'private' => $private, 'private_hex' => $private_hex );
         } // end get_address
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
