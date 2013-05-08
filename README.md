@@ -4,7 +4,11 @@ PHPCoinAddress
 PHPCoinAddress is a PHP object that creates public/private address key pairs for 
 Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
-Version 0.1.5
+Version 0.1.7
+
+Info: https://github.com/zamgo/PHPCoinAddress
+Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
+Git clone: https://github.com/zamgo/PHPCoinAddress.git
 
 Usage:
 ==============
