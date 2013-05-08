@@ -1,11 +1,14 @@
 <?php
 /* ****************************************************************************
 
-PHPCoinAddress 
-create public/private address key pairs for:
+PHPCoinAddress - create public/private address key pairs for:
 Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
 Version 0.1.7
+
+Info: https://github.com/zamgo/PHPCoinAddress
+Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
+Git clone: https://github.com/zamgo/PHPCoinAddress.git
 
 ****************************************************************************
 Example Usage:
@@ -22,11 +25,12 @@ print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
 
 ****************************************************************************
 Notes:
-- modded from https://gist.github.com/scintill/3549107
-- includes elliptic curve cryptography (ECC) libraries from https://github.com/mdanter/phpecc
+* modded from https://gist.github.com/scintill/3549107
+* includes Pure PHP Elliptic Curve Cryptography Library from https://github.com/mdanter/phpecc
+* Requires GMP or bcmath extension (GMP preferred for better performance)
 
 ****************************************************************************
-License:
+MIT License:
 
 Copyright (C) 2013 PHPCoinAddress Developers
 
