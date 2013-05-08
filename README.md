@@ -57,6 +57,12 @@ FEATHERCOIN TEST    *BT
 JUNKCOIN PUB         16    0x10
 JUNKCOIN PRI        144    0x90    
 JUNKCOIN TEST       *BT
+CHNCOIN PUB          28    0x1C
+CHNCOIN PRI         156    0x9C
+CHNCOIN TEST        *BT
+BYTECOIN PUB         18    0x12  ?
+BYTECOIN PRI        128    0x80  ?
+BYTECOIN TEST       *BT
 
 *B = BITCOIN prefixes
 *BT = BITCOIN TEST prefixes
