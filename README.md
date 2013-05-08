@@ -44,7 +44,7 @@ NAMECOIN PUB         52    0x34    M,N
 NAMECOIN PRI        180    0xB4    7
 NAMECOIN TEST         ?
 LITECOIN PUB         48    0x30    L
-LITECOIN PRI        176    0xB0
+LITECOIN PRI        176    0xB0    6
 LITECOIN TEST       *BT
 PPCOIN PUB           55    0x37
 PPCOIN PRI          183    0xB7
@@ -55,7 +55,7 @@ FEATHERCOIN PUB      14    0x0E
 FEATHERCOIN PRI     142    0x8E
 FEATHERCOIN TEST    *BT
 JUNKCOIN PUB         16    0x10    7
-JUNKCOIN PRI        144    0x90    
+JUNKCOIN PRI        144    0x90    5
 JUNKCOIN TEST       *BT
 CHNCOIN PUB          28    0x1C
 CHNCOIN PRI         156    0x9C
@@ -76,7 +76,7 @@ Roadmap:
 ==============
 * Compressed key support for all prefixes
 * confirm prefix settings for all coin types
-* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CHNcoin, Junkcoin, Bytecoin, Bitbar. Yacoin
+* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CHNcoin, Bytecoin, Bitbar, Yacoin, etc
 
 
 MIT License:
