@@ -31,6 +31,37 @@ Notes:
 * includes Pure PHP Elliptic Curve Cryptography Library from https://github.com/mdanter/phpecc
 * Requires GMP or bcmath extension (GMP preferred for better performance)
 
+Prefixes:
+=============
+<pre>
+Coin Pub/Pri        Int    Hex
+==================  ===    ===
+BITCOIN PUB           0    0x00
+BITCOIN PRI         128    0x80
+BITCOIN TEST PUB    111    0x6F
+BITCOIN TEST PRI    239    0xEF
+NAMECOIN PUB         52    0x34
+NAMECOIN PRI        180    0xB4
+NAMECOIN TEST         ?
+LITECOIN PUB         48    0x30
+LITECOIN PRI        176    0xB0
+LITECOIN TEST       *BT
+PPCOIN PUB           55    0x37
+PPCOIN PRI          183    0xB7
+PPCOIN TEST         *BT
+DEVCOIN              *B
+DEVCOIN TEST        *BT
+FEATHERCOIN PUB      14    0x0E
+FEATHERCOIN PRI     142    0x8E
+FEATHERCOIN TEST    *BT
+JUNKCOIN PUB         16    0x10
+JUNKCOIN PRI        144    0x90    
+JUNKCOIN TEST       *BT
+
+*B = BITCOIN prefixes
+*BT = BITCOIN TEST prefixes
+</pre>
+
 Roadmap:
 ==============
 * Compressed key support for all prefixes
