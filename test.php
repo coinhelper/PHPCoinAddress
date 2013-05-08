@@ -1,11 +1,11 @@
 <?php
-// PHPCoinAddress test - Version 0.1.3
+// PHPCoinAddress test - Version 0.1.4
 
 print "\nPHPCoinAddress Test:\n";
 
 require_once('PHPCoinAddress.php');
 CoinAddress::set_debug(false);
-CoinAddress::set_reuse_keys(true);
+CoinAddress::set_reuse_keys(false);
 
 print "Math library: " . USE_EXT . "\n";
 print "Reuse keys: " . ( CoinAddress::$reuse_keys ? 'true' : 'false' ) . "\n";
@@ -34,3 +34,4 @@ function coin_info($name,$coin) {
         print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
         print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
 }
+
