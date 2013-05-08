@@ -65,6 +65,8 @@ BYTECOIN TEST       *BT
 YACOIN PUB           77    0x4D
 YACOIN PRI          205    0xCD
 YACOIN TEST         *BT
+FREICOIN            *B
+FREICOIN TEST       *BT
 
 *B = BITCOIN prefixes
 *BT = BITCOIN TEST prefixes
