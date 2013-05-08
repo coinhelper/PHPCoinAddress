@@ -27,11 +27,18 @@ print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
 
 Notes:
 ==============
-- modded from https://gist.github.com/scintill/3549107
-- includes elliptic curve cryptography (ECC) libraries from https://github.com/mdanter/phpecc
-- requires PHP extension BCMATH or GMP.  (GMP is much faster)
+* modded from https://gist.github.com/scintill/3549107
+* includes Pure PHP Elliptic Curve Cryptography Library from https://github.com/mdanter/phpecc
+* Requires GMP or bcmath extension (GMP preferred for better performance)
 
-License:
+Roadmap:
+==============
+* Compressed key support for all prefixes
+* confirm prefix settings for all coin types
+* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CNcoin, Junkcoin
+
+
+MIT License:
 ==============
 Copyright (C) 2013 PHPCoinAddress Developers
 
