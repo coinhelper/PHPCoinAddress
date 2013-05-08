@@ -33,25 +33,25 @@ Prefixes:
 =============
 <pre>
                    Pub     Pub     Pub    Priv    Priv    Priv
-Coin               Dec     Hex     lead   Dec     Hex     lead   tested
-===============    ====    ====    ====   ====    ====    ====   ======
-BITCOIN               0    0x00    1       128    0x80    5
+Coin               Dec     Hex     lead   Dec     Hex     lead   test    note
+===============    ====    ====    ====   ====    ====    ====   ====    ====
+BITCOIN               0    0x00    1       128    0x80    5      OK
 BYTECOIN             18    0x12            128    0x80    
 CHNCOIN              28    0x1C            156    0x9C 
-DEVCOIN              *B
+DEVCOIN               0    0x00    1       128    0x80    5               (Bitcoin prefixes)
 FEATHERCOIN          14    0x0E            142    0x8E
-FREICOIN             *B
+FREICOIN              0    0x00    1       128    0x80    5               (Bitcoin prefixes)
 JUNKCOIN             16    0x10    7       144    0x90    5      OK
-LITECOIN             48    0x30    L       176    0xB0    6
+LITECOIN             48    0x30    L       176    0xB0    6      OK
 NAMECOIN             52    0x34    M,N     180    0xB4    7
 NOVACOIN              8    0x08            136    0x88
 PPCOIN               55    0x37            183    0xB7
 YACOIN               77    0x4D            205    0xCD
       
                    Pub     Pub     Pub    Priv    Priv    Priv
-Coin               Dec     Hex     lead   Dec     Hex     lead   tested
-===============    ====    ====    ====   ====    ====    ====   ======
-BITCOIN TEST        111    0x6F    m,n     239    0xEF    9 
+Coin               Dec     Hex     lead   Dec     Hex     lead   test
+===============    ====    ====    ====   ====    ====    ====   ====
+BITCOIN TEST        111    0x6F    m,n     239    0xEF    9      OK
 BYTECOIN TEST       *BT 
 CHNCOIN TEST        *BT
 DEVCOIN TEST        *BT
@@ -59,15 +59,14 @@ FEATHERCOIN TEST    *BT
 FREICOIN TEST       *BT
 JUNKCOIN TEST       *BT
 LITECOIN TEST       *BT
-NAMECOIN TEST         ?
+NAMECOIN TEST         
 NOVACOIN TEST       *BT
 PPCOIN TEST         *BT
 YACOIN TEST         *BT
 
-
-*B = BITCOIN prefixes
-*BT = BITCOIN TEST prefixes
 ** All are uncompressed
+*BT = BITCOIN TEST prefixes
+
 </pre>
 
 Roadmap:
