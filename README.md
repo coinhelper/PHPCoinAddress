@@ -1,16 +1,15 @@
 PHPCoinAddress
 ==============
+PHPCoinAddress is a PHP object that creates public/private address key pairs for:
+Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
-PHPCoinAddress is a PHP object that creates public/private address key pairs for Bitcoin, Namecoin, Litecoin and other cyrptocoins.
-
-Version 0.1.7
+Version 0.1.8
 
 * Info: https://github.com/zamgo/PHPCoinAddress
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
 * Git clone: https://github.com/zamgo/PHPCoinAddress.git
 
-
-Usage:
+Example Usage:
 ==============
 <pre>
 require_once 'PHPCoinAddress.php'; 
@@ -33,43 +32,46 @@ Notes:
 Prefixes:
 =============
 <pre>
-Coin Pub/Pri        Int    Hex     lead  
+Coin Pub/Pri        Dec    Hex     lead  
 ==================  ===    ====    ====
 BITCOIN PUB           0    0x00    1  
 BITCOIN PRI         128    0x80    5
-BITCOIN TEST PUB    111    0x6F    m,n
-BITCOIN TEST PRI    239    0xEF    9          
+DEVCOIN              *B
+FREICOIN             *B
 NAMECOIN PUB         52    0x34    M,N
 NAMECOIN PRI        180    0xB4    7
-NAMECOIN TEST         ?
 LITECOIN PUB         48    0x30    L
 LITECOIN PRI        176    0xB0    6
-LITECOIN TEST       *BT
 PPCOIN PUB           55    0x37
 PPCOIN PRI          183    0xB7
-PPCOIN TEST         *BT
-DEVCOIN              *B
-DEVCOIN TEST        *BT
 FEATHERCOIN PUB      14    0x0E
 FEATHERCOIN PRI     142    0x8E
-FEATHERCOIN TEST    *BT
 JUNKCOIN PUB         16    0x10    7
 JUNKCOIN PRI        144    0x90    5
-JUNKCOIN TEST       *BT
 CHNCOIN PUB          28    0x1C
 CHNCOIN PRI         156    0x9C
-CHNCOIN TEST        *BT
 BYTECOIN PUB         18    0x12 
 BYTECOIN PRI        128    0x80 
-BYTECOIN TEST       *BT
-YACOIN PUB           77    0x4D
-YACOIN PRI          205    0xCD
-YACOIN TEST         *BT
-FREICOIN             *B
-FREICOIN TEST       *BT
 NOVACOIN PUB          8    0x08
 NOVACOIN PRI        136    0x88
+YACOIN PUB           77    0x4D
+YACOIN PRI          205    0xCD
+
+Coin Pub/Pri        Int    Hex     lead  
+==================  ===    ====    ====
+BITCOIN TEST PUB    111    0x6F    m,n
+BITCOIN TEST PRI    239    0xEF    9     
+NAMECOIN TEST         ?
+LITECOIN TEST       *BT
+PPCOIN TEST         *BT
+DEVCOIN TEST        *BT
+FEATHERCOIN TEST    *BT
+CHNCOIN TEST        *BT
+JUNKCOIN TEST       *BT
+BYTECOIN TEST       *BT
+FREICOIN TEST       *BT
 NOVACOIN TEST       *BT
+YACOIN TEST         *BT
 
 *B = BITCOIN prefixes
 *BT = BITCOIN TEST prefixes

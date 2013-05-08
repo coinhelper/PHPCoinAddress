@@ -1,27 +1,28 @@
 <?php
 /* ****************************************************************************
 
-PHPCoinAddress - create public/private address key pairs for:
-Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
+PHPCoinAddress is a PHP object that creates public/private address key pairs for:
+Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
-Version 0.1.7
+Version 0.1.8
 
-Info: https://github.com/zamgo/PHPCoinAddress
-Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
-Git clone: https://github.com/zamgo/PHPCoinAddress.git
+* Info: https://github.com/zamgo/PHPCoinAddress
+* Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
+* Git clone: https://github.com/zamgo/PHPCoinAddress.git
+
 
 ****************************************************************************
 Example Usage:
 
-require_once 'PHPCoinAddress.php';
-// CoinAddress::set_debug(true);      // optional - show debugging messages
-// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses creations
+require_once 'PHPCoinAddress.php'; 
+// CoinAddress::set_debug(true);      // optional - show debugging messages 
+// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses 
 $coin = CoinAddress::bitcoin();  
 print "\nBITCOIN: (uncompressed)\n";
 print 'public: ' . $coin['public'] . "\n";
 print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
 print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
+print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n"; 
 
 ****************************************************************************
 Notes:
