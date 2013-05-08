@@ -1,5 +1,5 @@
 <?php
-// PHPCoinAddress test - Version 0.1.4
+// PHPCoinAddress test - Version 0.1.5
 
 print "\nPHPCoinAddress Test:\n";
 
@@ -21,6 +21,8 @@ $coin = CoinAddress::namecoin();         coin_info('Namecoin', $coin);
 //$coin = CoinAddress::ppcoin_testnet();   coin_info('PPCoin Testnet', $coin);
 //$coin = CoinAddress::devcoin();          coin_info('Devcoin', $coin);
 //$coin = CoinAddress::devcoin_testnet();  coin_info('Devcoin Testnet', $coin);
+//$coin = CoinAddress::junkcoin();         coin_info('Junkcoin', $coin);
+//$coin = CoinAddress::chncoin();          coin_info('CHNcoin', $coin);
 //$coin = CoinAddress::generic( $public_prefix='0x42', $private_prefix='0xaa');  coin_info('GENERIC', $coin);
 
 exit;
