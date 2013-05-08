@@ -139,7 +139,7 @@ class CoinAddress {
         public static function junkcoin() { self::$prefix_public = '0x10'; self::$prefix_private = '0x90'; return self::get_address(); }
         public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
         public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
-		public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
+	public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
         public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
         public static function yacoin() {   self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
 
@@ -162,7 +162,7 @@ class CoinAddress {
         public static function junkcoin_testnet() { return self::bitcoin_testing(); }
         public static function litecoin_testnet() { return self::bitcoin_testing(); }
         public static function namecoin_testnet() { return self::bitcoin_testing(); } // ??
-		public static function novacoin_testnet() { return self::bitcoin_testing(); }
+	public static function novacoin_testnet() { return self::bitcoin_testing(); }
         public static function ppcoin_testnet() { return self::bitcoin_testing(); }
         public static function yacoin_testnet() { return self::bitcoin_testing(); }
 	
