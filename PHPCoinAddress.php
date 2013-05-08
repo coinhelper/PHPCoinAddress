@@ -134,7 +134,8 @@ class CoinAddress {
         public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
         public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xb7'; return self::get_address(); }
         public static function devcoin() {  return self::bitcoin(); }
-
+        public static function junkcoin() { self::$prefix_public = '0x10'; self::$prefix_private = '0x90'; return self::get_address(); }
+        
         public static function generic( $prefix_public='', $prefix_private='' ) {
                 self::debug("generic: public:$prefix_public private:$prefix_private");
                 if( !$prefix_public || !$prefix_private ) { print 'ERROR'; exit; } // need better error checking here...
@@ -149,6 +150,7 @@ class CoinAddress {
         public static function litecoin_testnet() { return self::bitcoin_testnet(); }
         public static function ppcoin_testnet() {   return self::bitcoin_testnet(); } // ??
         public static function devcoin_testnet() {  return self::bitcoin_testnet(); }
+	public static function junkcoin_testnet() { return self::bitcoin_testnet(); }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function get_address() {
