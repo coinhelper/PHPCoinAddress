@@ -34,16 +34,16 @@ Notes:
 Prefixes:
 =============
 <pre>
-Coin Pub/Pri        Int    Hex
-==================  ===    ===
-BITCOIN PUB           0    0x00
-BITCOIN PRI         128    0x80
-BITCOIN TEST PUB    111    0x6F
-BITCOIN TEST PRI    239    0xEF
-NAMECOIN PUB         52    0x34
-NAMECOIN PRI        180    0xB4
+Coin Pub/Pri        Int    Hex     lead  
+==================  ===    ====    ====
+BITCOIN PUB           0    0x00    1  
+BITCOIN PRI         128    0x80    5
+BITCOIN TEST PUB    111    0x6F    m,n
+BITCOIN TEST PRI    239    0xEF    9          
+NAMECOIN PUB         52    0x34    M,N
+NAMECOIN PRI        180    0xB4    7
 NAMECOIN TEST         ?
-LITECOIN PUB         48    0x30
+LITECOIN PUB         48    0x30    L
 LITECOIN PRI        176    0xB0
 LITECOIN TEST       *BT
 PPCOIN PUB           55    0x37
@@ -54,14 +54,14 @@ DEVCOIN TEST        *BT
 FEATHERCOIN PUB      14    0x0E
 FEATHERCOIN PRI     142    0x8E
 FEATHERCOIN TEST    *BT
-JUNKCOIN PUB         16    0x10
+JUNKCOIN PUB         16    0x10    7
 JUNKCOIN PRI        144    0x90    
 JUNKCOIN TEST       *BT
 CHNCOIN PUB          28    0x1C
 CHNCOIN PRI         156    0x9C
 CHNCOIN TEST        *BT
-BYTECOIN PUB         18    0x12  ?
-BYTECOIN PRI        128    0x80  ?
+BYTECOIN PUB         18    0x12 
+BYTECOIN PRI        128    0x80 
 BYTECOIN TEST       *BT
 YACOIN PUB           77    0x4D
 YACOIN PRI          205    0xCD
@@ -69,6 +69,7 @@ YACOIN TEST         *BT
 
 *B = BITCOIN prefixes
 *BT = BITCOIN TEST prefixes
+** All are uncompressed
 </pre>
 
 Roadmap:
