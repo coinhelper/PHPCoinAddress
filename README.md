@@ -63,6 +63,9 @@ CHNCOIN TEST        *BT
 BYTECOIN PUB         18    0x12  ?
 BYTECOIN PRI        128    0x80  ?
 BYTECOIN TEST       *BT
+YACOIN PUB           77    0x4D
+YACOIN PRI          205    0xCD
+YACOIN TEST         *BT
 
 *B = BITCOIN prefixes
 *BT = BITCOIN TEST prefixes
@@ -72,7 +75,7 @@ Roadmap:
 ==============
 * Compressed key support for all prefixes
 * confirm prefix settings for all coin types
-* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CHNcoin, Junkcoin, Bytecoin, Bitbar
+* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CHNcoin, Junkcoin, Bytecoin, Bitbar. Yacoin
 
 
 MIT License:
