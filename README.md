@@ -35,7 +35,7 @@ Roadmap:
 ==============
 * Compressed key support for all prefixes
 * confirm prefix settings for all coin types
-* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CNcoin, Junkcoin
+* add coin types: Friecoin, Feathercoin, IXcoin, Terracoin, Novacoin, CHNcoin, Junkcoin, Bytecoin, Bitbar
 
 
 MIT License:
