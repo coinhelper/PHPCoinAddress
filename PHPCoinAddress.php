@@ -5,7 +5,7 @@ PHPCoinAddress
 create public/private address key pairs for:
 Bitcoin, Namecoin, Litecoin, PPCoin, Devcoin, and other cyrptocoins.
 
-Version 0.1.6
+Version 0.1.7
 
 ****************************************************************************
 Example Usage:
@@ -16,6 +16,7 @@ require_once 'PHPCoinAddress.php';
 $coin = CoinAddress::bitcoin();  
 print "\nBITCOIN: (uncompressed)\n";
 print 'public: ' . $coin['public'] . "\n";
+print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
 print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
 print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
 
@@ -155,15 +156,11 @@ class CoinAddress {
                 } elseif ( !self::$reuse_keys ) {
                         self::create_key_pair();
                 }
-                $public  = self::base58check_encode( self::$prefix_public,  self::$key_pair_public );
-                $public_hex = self::$key_pair_public_hex;
-                $private = self::base58check_encode( self::$prefix_private, self::$key_pair_private );
-		$private_hex = self::$key_pair_private_hex;
-		self::debug("get_address: public: $public");
-		self::debug("get_address: public_hex: $public_hex");
-		self::debug("get_address: private: $private");
-		self::debug("get_address: private_hex: $private_hex");
-                return array( 'public' => $public, 'public_hex' => $public_hex, 'private' => $private, 'private_hex' => $private_hex );
+                return array(  'public'      => self::base58check_encode( self::$prefix_public,  self::$key_pair_public ),
+                               'public_hex'  => self::$key_pair_public_hex,
+                               'private'     => self::base58check_encode( self::$prefix_private, self::$key_pair_private ),
+                               'private_hex' => self::$key_pair_private_hex,
+                            );
         } // end get_address
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -191,7 +188,7 @@ class CoinAddress {
                 $pubBinStr = "\x04" . str_pad(bcmath_Utils::bc2bin($point->getX()), 32, "\x00", STR_PAD_LEFT) .
                         str_pad(bcmath_Utils::bc2bin($point->getY()), 32, "\x00", STR_PAD_LEFT);
                 self::$key_pair_public = hash('ripemd160', hash('sha256', $pubBinStr, true), true);
-                self::$key_pair_public_hex = bin2hex(self::$key_pair_public);
+                self::$key_pair_public_hex = bin2hex($pubBinStr);
                 self::$key_pair_private = $privBin;
                 self::$key_pair_private_hex = bin2hex($privBin);
         } // end create_key_pair
