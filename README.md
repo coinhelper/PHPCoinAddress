@@ -20,6 +20,7 @@ require_once 'PHPCoinAddress.php';
 $coin = CoinAddress::bitcoin();  
 print "\nBITCOIN: (uncompressed)\n";
 print 'public: ' . $coin['public'] . "\n";
+print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
 print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
 print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n"; 
 </pre>
