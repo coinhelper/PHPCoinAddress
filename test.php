@@ -1,64 +1,36 @@
 <?php
-// PHPCoinAddress test - Version 0.1.2
+// PHPCoinAddress test - Version 0.1.3
 
-print "PHPCoinAddress Test:\n";
+print "\nPHPCoinAddress Test:\n";
 
 require_once('PHPCoinAddress.php');
-
 CoinAddress::set_debug(false);
 CoinAddress::set_reuse_keys(true);
 
-print "CoinAddress::reuse_keys: " . CoinAddress::$reuse_keys . "\n";
+print "Math library: " . USE_EXT . "\n";
+print "Reuse keys: " . ( CoinAddress::$reuse_keys ? 'true' : 'false' ) . "\n";
+print "Debug: " . ( CoinAddress::$debug? 'true' : 'false' ) . "\n";
 
-$coin = CoinAddress::bitcoin();  
-print "\nBITCOIN: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
+$coin = CoinAddress::bitcoin();          coin_info('Bitcoin', $coin);
+$coin = CoinAddress::bitcoin_testnet();  coin_info('Bitcoin Testnet', $coin);
+$coin = CoinAddress::namecoin();         coin_info('Namecoin', $coin);
+//$coin = CoinAddress::namecoin_testnet(); coin_info('Namecoin Testnet', $coin);
+//$coin = CoinAddress::litecoin();         coin_info('Litecoin', $coin);
+//$coin = CoinAddress::litecoin_testnet(); coin_info('Litecoin Testnet', $coin);
+//$coin = CoinAddress::ppcoin();           coin_info('PPCoin', $coin);
+//$coin = CoinAddress::ppcoin_testnet();   coin_info('PPCoin Testnet', $coin);
+//$coin = CoinAddress::devcoin();          coin_info('Devcoin', $coin);
+//$coin = CoinAddress::devcoin_testnet();  coin_info('Devcoin Testnet', $coin);
+//$coin = CoinAddress::generic( $public_prefix='0x42', $private_prefix='0xaa');  coin_info('GENERIC', $coin);
 
-$coin = CoinAddress::bitcoin_testnet(); 
-print "\nBITCOIN TESTNET: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-$coin = CoinAddress::namecoin(); 
-print "\nNAMECOIN: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-$coin = CoinAddress::namecoin_testnet(); 
-print "\nNAMECOIN TESTNET: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-/*
-$coin = CoinAddress::litecoin();
-print "\nLitecoin: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-$coin = CoinAddress::ppcoin(); 
-print "\nPPcoin: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-$coin = CoinAddress::devcoin();
-print "\nDevcoin: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-$public_prefix = '0x42'; $private_prefix = '0xAB';
-$coin = CoinAddress::generic( $public_prefix, $private_prefix);
-print "\nGENERIC: prefix: pub:$public_prefix priv:$private_prefix (uncompressed) ";
-print 'public: ' . $coin['public'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
-
-*/
 exit;
+
+
+//////////////////////////////////////////////
+function coin_info($name,$coin) {
+        print "\n$name\n";
+        print 'public: ' . $coin['public'] . "\n";
+        print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
+        print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
+        print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n";
+}
