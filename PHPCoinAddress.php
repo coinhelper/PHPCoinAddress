@@ -131,17 +131,17 @@ class CoinAddress {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function bitcoin() {  self::$prefix_public = '0x00'; self::$prefix_private = '0x80'; return self::get_address(); }
-        public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
-        public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
-        public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
-        public static function devcoin() {  return self::bitcoin(); }
-        public static function junkcoin() { self::$prefix_public = '0x10'; self::$prefix_private = '0x90'; return self::get_address(); }
-        public static function chncoin() {  self::$prefix_public = '0x1C'; self::$prefix_private = '0x9C'; return self::get_address(); }
-        public static function yacoin() {   self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
-        public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
-        public static function freicoin() { return self::bitcoin(); }
-        public static function feathercoin() { self::$prefix_public = '0x0E'; self::$prefix_private = '0x8E'; return self::get_address(); }
         public static function bytecoin() { self::$prefix_public = '0x12'; self::$prefix_private = '0x80'; return self::get_address(); }
+        public static function chncoin() {  self::$prefix_public = '0x1C'; self::$prefix_private = '0x9C'; return self::get_address(); }
+        public static function devcoin() {  return self::bitcoin(); }
+        public static function feathercoin() { self::$prefix_public = '0x0E'; self::$prefix_private = '0x8E'; return self::get_address(); }
+        public static function freicoin() { return self::bitcoin(); }
+        public static function junkcoin() { self::$prefix_public = '0x10'; self::$prefix_private = '0x90'; return self::get_address(); }
+        public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
+        public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
+		public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
+        public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
+        public static function yacoin() {   self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
 
 
         public static function generic( $prefix_public='', $prefix_private='' ) {
@@ -154,17 +154,17 @@ class CoinAddress {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function bitcoin_testnet() {  self::$prefix_public = '0x6F'; self::$prefix_private = '0xEF'; return self::get_address(); }
-        public static function namecoin_testnet() { return self::bitcoin_testnet(); } // ??
-        public static function litecoin_testnet() { return self::bitcoin_testnet(); }
-        public static function ppcoin_testnet() {   return self::bitcoin_testnet(); } 
-        public static function devcoin_testnet() {  return self::bitcoin_testnet(); }
-	public static function junkcoin_testnet() { return self::bitcoin_testnet(); }
-	public static function chncoin_testnet() { return self::bitcoin_testnet(); }
-	public static function yacoin_testnet() { return self::bitcoin_testnet(); }
-	public static function novacoin_testnet() { return self::bitcoin_testnet(); }
-	public static function freicoin_testnet() { return self::bitcoin_testnet(); }	
-	public static function feathercoin_testnet() { return self::bitcoin_testnet(); }	
-	public static function bytecoin_testnet() { return self::bitcoin_testnet(); }
+        public static function bytecoin_testnet() { return self::bitcoin_testing(); }
+        public static function chncoin_testnet() { return self::bitcoin_testing(); }
+        public static function devcoin_testnet() { return self::bitcoin_testing(); }
+        public static function feathercoin_testnet() { return self::bitcoin_testing(); }
+        public static function freicoin_testnet() { return self::bitcoin(); }
+        public static function junkcoin_testnet() { return self::bitcoin_testing(); }
+        public static function litecoin_testnet() { return self::bitcoin_testing(); }
+        public static function namecoin_testnet() { return self::bitcoin_testing(); } // ??
+		public static function novacoin_testnet() { return self::bitcoin_testing(); }
+        public static function ppcoin_testnet() { return self::bitcoin_testing(); }
+        public static function yacoin_testnet() { return self::bitcoin_testing(); }
 	
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function get_address() {
