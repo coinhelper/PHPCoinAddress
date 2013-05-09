@@ -1,5 +1,5 @@
 <?php
-// PHPCoinAddress test - Version 0.1.7
+// PHPCoinAddress test - Version 0.1.8
 
 print "\nPHPCoinAddress Test:\n";
 
@@ -39,7 +39,10 @@ $coin = CoinAddress::bitcoin_testnet();     coin_info('Bitcoin Testnet', $coin);
 //$coin = CoinAddress::yacoin_testnet();      coin_info('Yacoin Testnet', $coin);
 
 
-//$coin = CoinAddress::generic( $public_prefix='0x42', $private_prefix='0xaa');  coin_info('GENERIC', $coin);
+$public_prefix  = '0x' . dechex( mt_rand(0,255) );
+$private_prefix = '0x' . dechex( mt_rand(0,255) );
+$coin = CoinAddress::generic( $public_prefix, $private_prefix);  
+coin_info("[Generic: public_prefix: $public_prefix  private_prefix: $private_prefix]", $coin);
 
 exit;
 
