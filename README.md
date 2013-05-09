@@ -1,7 +1,9 @@
 PHPCoinAddress
 ==============
-PHPCoinAddress is a PHP object that creates public/private address key pairs for:
+PHPCoinAddress is a PHP object that creates public/private key pairs for:
 Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
+
+PHPCoinAddress is intended to be easy to integrate into other PHP projects. 
 
 Version 0.1.8
 
@@ -17,11 +19,10 @@ require_once 'PHPCoinAddress.php';
 // CoinAddress::set_debug(true);      // optional - show debugging messages
 // CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
 $coin = CoinAddress::bitcoin();  
-print "\nBITCOIN: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n"; 
+print 'public (base58): ' . $coin['public'] . "\n";
+print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
+print 'private (WIF)  : ' . $coin['private'] . "\n";
+print 'private (Hex)  : ' . $coin['private_hex'] . "\n"; 
 </pre>
 * See test.php for more extensive tests.
 

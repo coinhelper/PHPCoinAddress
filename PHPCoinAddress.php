@@ -17,12 +17,11 @@ Example Usage:
 require_once 'PHPCoinAddress.php';
 // CoinAddress::set_debug(true);      // optional - show debugging messages
 // CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
-$coin = CoinAddress::bitcoin();
-print "\nBITCOIN: (uncompressed)\n";
-print 'public: ' . $coin['public'] . "\n";
-print 'public (Hexadecimal): ' . $coin['public_hex'] . "\n";
-print 'private (Wallet Import Format): ' . $coin['private'] . "\n";
-print 'private (Hexadecimal): ' . $coin['private_hex'] . "\n"; 
+$coin = CoinAddress::bitcoin();  
+print 'public (base58): ' . $coin['public'] . "\n";
+print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
+print 'private (WIF)  : ' . $coin['private'] . "\n";
+print 'private (Hex)  : ' . $coin['private_hex'] . "\n"; 
 
 ****************************************************************************
 Notes:

@@ -11,6 +11,8 @@ print "Math library: " . USE_EXT . "\n";
 print "Reuse keys: " . ( CoinAddress::$reuse_keys ? 'true' : 'false' ) . "\n";
 print "Debug: " . ( CoinAddress::$debug? 'true' : 'false' ) . "\n";
 
+$start = microtime(1);
+
 $coin = CoinAddress::bitcoin();          coin_info('Bitcoin', $coin);
 $coin = CoinAddress::bytecoin();         coin_info('Bytecoin', $coin);
 $coin = CoinAddress::chncoin();          coin_info('CHNcoin', $coin);
@@ -44,6 +46,11 @@ $private_prefix = '0x' . dechex( mt_rand(0,255) );
 $coin = CoinAddress::generic( $public_prefix, $private_prefix);  
 coin_info("[Generic: public_prefix: $public_prefix  private_prefix: $private_prefix]", $coin);
 
+
+$end = microtime(1);
+$duration = $end - $start;
+$duration = round($duration,8);
+print "\nTest Time: $duration seconds\n";
 exit;
 
 
