@@ -5,7 +5,7 @@ Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
 PHPCoinAddress is intended to be easy to integrate into other PHP projects. 
 
-Version 0.1.8
+Version 0.1.9.pre
 
 * Info: https://github.com/zamgo/PHPCoinAddress
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
@@ -38,40 +38,40 @@ Prefixes:
                    Pub   Pub   Pub   Priv  Priv  Priv
 Coin               Dec   Hex   lead  Dec   Hex   lead  test  note
 =================  ====  ====  ====  ====  ====  ====  ====  ====
-BITCOIN               0  0x00  1      128  0x80  5     OK   
-BITBAR                                                 -
-BYTECOIN             18  0x12         128  0x80        -
-CHNCOIN              28  0x1C         156  0x9C        -
+BITCOIN               0  0x00  1      128  0x80  5     OK    https://github.com/bitcoin/bitcoin
+BITBAR               25  0x19         153  0x99        -     https://github.com/aLQ/bitbar
+BYTECOIN             18  0x12         128  0x80        -     https://github.com/bryan-mills/bytecoin
+CHNCOIN              28  0x1C         156  0x9C        -     https://github.com/CHNCoin/CHNCoin
 DEVCOIN               0  0x00  1      128  0x80  5     -     *B
-FEATHERCOIN          14  0x0E         142  0x8E        -
+FEATHERCOIN          14  0x0E         142  0x8E        -     https://github.com/FeatherCoin/FeatherCoin
 FREICOIN              0  0x00  1      128  0x80  5     -     *B
 IXCOIN                                                 -
-JUNKCOIN             16  0x10  7      144  0x90  5     OK
-LITECOIN             48  0x30  L      176  0xB0  6     OK
-NAMECOIN             52  0x34  M,N    180  0xB4  7     -
-NOVACOIN              8  0x08         136  0x88        -
-PPCOIN               55  0x37         183  0xB7        -
-TERRACOIN                                              -
-YACOIN               77  0x4D         205  0xCD        -
+JUNKCOIN             16  0x10  7      144  0x90  5     OK    https://github.com/js2082/JKC
+LITECOIN             48  0x30  L      176  0xB0  6     OK    https://github.com/litecoin-project/litecoin
+NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/namecoin/namecoin
+NOVACOIN              8  0x08         136  0x88        -     https://github.com/CryptoManiac/novacoin
+PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
+TERRACOIN                                              -     https://github.com/terracoin/terracoin
+YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
                    Pub   Pub   Pub   Priv  Priv  Priv
 Coin               Dec   Hex   lead  Dec   Hex   lead  test  note
 =================  ====  ====  ====  ====  ====  ====  ====  ====
-BITCOIN TEST        111  0x6F  m,n    239  0xEF  9     OK
-BITBAR TEST                                            -
-BYTECOIN TEST       111  0x6F  m,n    239  0xEF  9     -     *BT
-CHNCOIN TEST        111  0x6F  m,n    239  0xEF  9     -     *BT
-DEVCOIN TEST        111  0x6F  m,n    239  0xEF  9     -     *BT
-FEATHERCOIN TEST    111  0x6F  m,n    239  0xEF  9     -     *BT
-IXCOIN TEST                                            -
-FREICOIN TEST       111  0x6F  m,n    239  0xEF  9     -     *BT
-JUNKCOIN TEST       111  0x6F  m,n    239  0xEF  9     -     *BT
-LITECOIN TEST       111  0x6F  m,n    239  0xEF  9     -     *BT
-NAMECOIN TEST                                          -
-NOVACOIN TEST       111  0x6F  m,n    239  0xEF  9     -     *BT
-PPCOIN TEST         111  0x6F  m,n    239  0xEF  9     -     *BT
-TERRACOIN TEST                                         -
-YACOIN TEST         111  0x6F  m,n    239  0xEF  9     -     *BT
+BITCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     OK
+BITBAR TESTNET      115  0x73         243  0xF3        -
+BYTECOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+CHNCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
+DEVCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
+FEATHERCOIN TESTNET 111  0x6F  m,n    239  0xEF  9     -     *BT
+IXCOIN TESTNET                                         -
+FREICOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+JUNKCOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+LITECOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+NAMECOIN TESTNET                                       -
+NOVACOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+PPCOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
+TERRACOIN TESTNET                                      -
+YACOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
 
 Notes:
 ** All prefixes are for uncompressed keys
