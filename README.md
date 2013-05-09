@@ -54,6 +54,7 @@ NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/
 NOVACOIN              8  0x08         136  0x88        -     https://github.com/CryptoManiac/novacoin
 PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
 ROYALCOIN                                              -     http://sourceforge.net/projects/royalcoin/
+SMALLCHANGE          62  0x3E  S      190  0xBE        -     https://github.com/bfroemel/smallchange
 TERRACOIN                                              -     https://github.com/terracoin/terracoin
 YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
@@ -77,6 +78,7 @@ NOVACOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
 PPCOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
 ROYALCOIN TESTNET                                      -
 TERRACOIN TESTNET                                      -
+SMALLCHANGE TESTNET 111  0x6F  m,n    239  0xEF  9     -     *BT
 YACOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
 
 Notes:
