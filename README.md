@@ -8,14 +8,14 @@ Version 0.1.8
 * Info: https://github.com/zamgo/PHPCoinAddress
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
 * Git clone: https://github.com/zamgo/PHPCoinAddress.git
-* Raw: https://raw.github.com/zamgo/PHPCoinAddress/master/PHPCoinAddress.php
+* Raw TXT: https://raw.github.com/zamgo/PHPCoinAddress/master/PHPCoinAddress.php
 
 Example Usage:
 ==============
 <pre>
-require_once 'PHPCoinAddress.php'; 
-// CoinAddress::set_debug(true);      // optional - show debugging messages 
-// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses 
+require_once 'PHPCoinAddress.php';
+// CoinAddress::set_debug(true);      // optional - show debugging messages
+// CoinAddress::set_reuse_keys(true); // optional - use same key for all addresses
 $coin = CoinAddress::bitcoin();  
 print "\nBITCOIN: (uncompressed)\n";
 print 'public: ' . $coin['public'] . "\n";
@@ -52,7 +52,7 @@ NOVACOIN              8  0x08         136  0x88        -
 PPCOIN               55  0x37         183  0xB7        -
 TERRACOIN                                              -
 YACOIN               77  0x4D         205  0xCD        -
-      
+
                    Pub   Pub   Pub   Priv  Priv  Priv
 Coin               Dec   Hex   lead  Dec   Hex   lead  test  note
 =================  ====  ====  ====  ====  ====  ====  ====  ====
@@ -107,3 +107,4 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
 OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
