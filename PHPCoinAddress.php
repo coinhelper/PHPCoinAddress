@@ -145,17 +145,11 @@ class CoinAddress {
         public static function junkcoin() { self::$prefix_public = '0x10'; self::$prefix_private = '0x90'; return self::get_address(); }
         public static function litecoin() { self::$prefix_public = '0x30'; self::$prefix_private = '0xB0'; return self::get_address(); }
         public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
-<<<<<<< HEAD
 	public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
-        public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
-        public static function yacoin() {   self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
-
-=======
-		public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
         public static function ppcoin() { self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
         //public static function terracoin() { self::$prefix_public = '0x??'; self::$prefix_private = '0x??'; return self::get_address(); }
         public static function yacoin() { self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
->>>>>>> coin tests, cleanup
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static function generic( $prefix_public='', $prefix_private='' ) {
