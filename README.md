@@ -42,10 +42,10 @@ BITCOIN               0  0x00  1      128  0x80  5     OK    https://github.com/
 BITBAR               25  0x19         153  0x99        -     https://github.com/aLQ/bitbar
 BYTECOIN             18  0x12         128  0x80        -     https://github.com/bryan-mills/bytecoin
 CHNCOIN              28  0x1C         156  0x9C        -     https://github.com/CHNCoin/CHNCoin
-DEVCOIN               0  0x00  1      128  0x80  5     -     *B
+DEVCOIN               0  0x00  1      128  0x80  5     -     *B http://sourceforge.net/projects/galacticmilieu/files/DeVCoin/
 FEATHERCOIN          14  0x0E         142  0x8E        -     https://github.com/FeatherCoin/FeatherCoin
-FREICOIN              0  0x00  1      128  0x80  5     -     *B
-IXCOIN                                                 -
+FREICOIN              0  0x00  1      128  0x80  5     -     *B https://github.com/freicoin/freicoin
+IXCOIN                                                 -     https://github.com/ixcoin/ixcoin
 JUNKCOIN             16  0x10  7      144  0x90  5     OK    https://github.com/js2082/JKC
 LITECOIN             48  0x30  L      176  0xB0  6     OK    https://github.com/litecoin-project/litecoin
 NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/namecoin/namecoin
