@@ -39,6 +39,7 @@ Prefixes:
 Coin               Dec   Hex   lead  Dec   Hex   lead  test  note
 =================  ====  ====  ====  ====  ====  ====  ====  ====
 BITCOIN               0  0x00  1      128  0x80  5     OK    https://github.com/bitcoin/bitcoin
+BBQCOIN                                                -     http://github.com/Cubox-/BBQCoin/
 BITBAR               25  0x19         153  0x99        -     https://github.com/aLQ/bitbar
 BYTECOIN             18  0x12         128  0x80        -     https://github.com/bryan-mills/bytecoin
 CHNCOIN              28  0x1C         156  0x9C        -     https://github.com/CHNCoin/CHNCoin
@@ -48,9 +49,11 @@ FREICOIN              0  0x00  1      128  0x80  5     -     *B https://github.c
 IXCOIN                                                 -     https://github.com/ixcoin/ixcoin
 JUNKCOIN             16  0x10  7      144  0x90  5     OK    https://github.com/js2082/JKC
 LITECOIN             48  0x30  L      176  0xB0  6     OK    https://github.com/litecoin-project/litecoin
+MINCOIN              50        m                       -     https://github.com/SandyCohen/mincoin
 NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/namecoin/namecoin
 NOVACOIN              8  0x08         136  0x88        -     https://github.com/CryptoManiac/novacoin
 PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
+ROYALCOIN                                              -     http://sourceforge.net/projects/royalcoin/
 TERRACOIN                                              -     https://github.com/terracoin/terracoin
 YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
@@ -67,9 +70,11 @@ IXCOIN TESTNET                                         -
 FREICOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
 JUNKCOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
 LITECOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
+MINCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
 NAMECOIN TESTNET                                       -
 NOVACOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
 PPCOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
+ROYALCOIN TESTNET                                      -
 TERRACOIN TESTNET                                      -
 YACOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
 
