@@ -49,9 +49,10 @@ exit;
 
 //////////////////////////////////////////////
 function coin_info($name,$coin) {
-        print "\n$name: " . $coin['public'] . "\n";
-        print 'public (Hex) : ' . $coin['public_hex'] . "\n";
-        print 'private (WIF): ' . $coin['private'] . "\n";
-        print 'private (Hex): ' . $coin['private_hex'] . "\n";
+    print "\n$name:\n";
+    print 'public (base58): ' . $coin['public'] . "\n";
+    print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
+    print 'private (WIF)  : ' . $coin['private'] . "\n";
+    print 'private (Hex)  : ' . $coin['private_hex'] . "\n";
 }
 
