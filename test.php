@@ -1,7 +1,7 @@
 <?php
 // PHPCoinAddress test
 
-$version = '0.1.9.pre';
+$version = '0.1.9';
 
 print "\nTEST: PHPCoinAddress $version\n";
 
