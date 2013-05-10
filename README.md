@@ -11,6 +11,7 @@ Version 0.1.9.pre
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
 * Git clone: https://github.com/zamgo/PHPCoinAddress.git
 * Raw TXT: https://raw.github.com/zamgo/PHPCoinAddress/master/PHPCoinAddress.php
+* Bitcointalk thread: https://bitcointalk.org/index.php?topic=200042.0
 
 Example Usage:
 ==============
@@ -68,7 +69,7 @@ ONECOIN             115  0x73  o      243  0xF3        -     https://github.com/
 PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
 ROYALCOIN                   ?                 ?        -     http://sourceforge.net/projects/royalcoin/
 SMALLCHANGE          62  0x3E  S      190  0xBE        -     https://github.com/bfroemel/smallchange
-TERRACOIN             0  0x00  1      128  0x80  5     -     *B https://github.com/terracoin/terracoin
+TERRACOIN             0  0x00  1      128  0x80  5     -     https://github.com/terracoin/terracoin
 YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
                     Pub   Pub   Pub  Priv  Priv  Priv
@@ -89,10 +90,10 @@ MINCOIN, NOVACOIN, ONECOIN, PPCOIN, TERRACOIN, SMALLCHANGE, YACOIN
 
 Roadmap:
 ==============
-* Compressed key support for all prefixes
 * confirm prefix settings for all coin types
-* add coin types: IXcoin, Terracoin, Bytecoin, Bitbar, etc
-
+* Compressed key support for all prefixes
+* add coin types: IXcoin, Fairbrix, royalcoin
+* improved error checking + return values
 
 MIT License:
 ==============
