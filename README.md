@@ -32,8 +32,17 @@ Notes:
 * includes Pure PHP Elliptic Curve Cryptography Library from https://github.com/mdanter/phpecc
 * Requires GMP or bcmath extension (GMP preferred for better performance)
 
-Prefixes:
+Prefix List:
 =============
+Key:
+Pub Dec = Prefix for Public Key, Decimal
+Pub Hex = Prefix for Public Key, Hexadecimal
+Pub lead = leading character in Public Key
+Priv Dec = Prefix for Private Key, Decimal 
+Priv Hex = Prefix for Private Key, Hexadecimal
+Priv lead = leading character in Private Key (Wallet Import Format)
+
+Note: prefixes are for uncompressed keys
 <pre>
                     Pub   Pub  Pub   Priv  Priv  Priv
 Coin                Dec   Hex  lead   Dec   Hex  lead  test  note
@@ -74,11 +83,6 @@ ROYALCOIN TESTNET           ?                 ?        -
 TESTNET Coins using BITCOIN TESTNET prefixes:
 BYTECOIN, CHNCOIN, DEVCOIN, FEATHERCOIN, FREICOIN, JUNKCOIN, LITECOIN
 MINCOIN, NOVACOIN, ONECOIN, PPCOIN, TERRACOIN, SMALLCHANGE, YACOIN
-
-Notes:
-** All prefixes are for uncompressed keys
-*B = uses BITCOIN prefixes
-
 </pre>
 
 Roadmap:
