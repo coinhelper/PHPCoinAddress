@@ -29,9 +29,11 @@ while( $stop !== true ) {
 
         $try = CoinAddress::$coin_type();
 
-        if( preg_match( $pattern, $try['public'] ) ) {
-                print "\nAddress: " . $try['public'] . "\n";
-                print "Private key: " . $try['private'] . "\n";
+        if( preg_match( $pattern, $try['public'] ) || preg_match( $pattern, $try['public_compressed'] ) ) {
+                print_r($try);
+                print "\n";
+                //print "\nAddress: " . $try['public'] . "\n";
+                //print "Private key: " . $try['private'] . "\n";
         }
 
         if( $count > $max_attempts ) { $stop = true; }
