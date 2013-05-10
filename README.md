@@ -25,7 +25,7 @@ print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
 print 'private (WIF)  : ' . $coin['private'] . "\n";
 print 'private (Hex)  : ' . $coin['private_hex'] . "\n"; 
 </pre>
-* See test.php for more extensive tests.
+* See [test.php](https://github.com/zamgo/PHPCoinAddress/blob/master/test.php) for more extensive tests.
 
 Notes:
 ==============
