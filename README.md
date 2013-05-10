@@ -5,7 +5,7 @@ Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
 PHPCoinAddress is intended to be easy to integrate into other PHP projects. 
 
-Version 0.1.9
+Version 0.2.0.pre
 
 * Info: https://github.com/zamgo/PHPCoinAddress
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
@@ -90,8 +90,7 @@ MINCOIN, NOVACOIN, ONECOIN, PPCOIN, TERRACOIN, SMALLCHANGE, YACOIN
 
 Roadmap:
 ==============
-* confirm prefix settings for all coin types
-* add compressed private key in Hexadecimal
+* confirm prefix settings for all coin types, test importing
 * add coin types: IXcoin, Fairbrix, royalcoin, etc
 * improved error checking + return values
 
