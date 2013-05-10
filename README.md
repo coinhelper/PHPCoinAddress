@@ -45,7 +45,7 @@ Priv lead = leading character in Private Key (Wallet Import Format)
 test = Test results for importing PHPCoinAddress created keys into standard client
 src = official source code repository
 
-Note: prefixes are for uncompressed keys
+Note: tests are for uncompressed keys
 
                     Pub   Pub  Pub   Priv  Priv  Priv
 Coin                Dec   Hex  lead   Dec   Hex  lead  test  src
@@ -91,8 +91,8 @@ MINCOIN, NOVACOIN, ONECOIN, PPCOIN, TERRACOIN, SMALLCHANGE, YACOIN
 Roadmap:
 ==============
 * confirm prefix settings for all coin types
-* Compressed key support for all prefixes
-* add coin types: IXcoin, Fairbrix, royalcoin
+* add compressed private key in Hexadecimal
+* add coin types: IXcoin, Fairbrix, royalcoin, etc
 * improved error checking + return values
 
 MIT License:
