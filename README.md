@@ -44,10 +44,10 @@ BITBAR               25  0x19         153  0x99        -     https://github.com/
 BYTECOIN             18  0x12         128  0x80        -     https://github.com/bryan-mills/bytecoin
 CHNCOIN              28  0x1C         156  0x9C        -     https://github.com/CHNCoin/CHNCoin
 DEVCOIN               0  0x00  1      128  0x80  5     -     *B http://sourceforge.net/projects/galacticmilieu/files/DeVCoin/
-FAIRBRIX                                               -     https://github.com/coblee/Fairbrix
+FAIRBRIX                    ?                 ?        -     https://github.com/coblee/Fairbrix
 FEATHERCOIN          14  0x0E         142  0x8E        -     https://github.com/FeatherCoin/FeatherCoin
 FREICOIN              0  0x00  1      128  0x80  5     -     *B https://github.com/freicoin/freicoin
-IXCOIN                                                 -     https://github.com/ixcoin/ixcoin
+IXCOIN                      ?                 ?        -     https://github.com/ixcoin/ixcoin
 JUNKCOIN             16  0x10  7      144  0x90  5     OK    https://github.com/js2082/JKC
 LITECOIN             48  0x30  L      176  0xB0  6     OK    https://github.com/litecoin-project/litecoin
 MINCOIN              50  0x32  m      178  0xB2        -     https://github.com/SandyCohen/mincoin
@@ -55,9 +55,9 @@ NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/
 NOVACOIN              8  0x08         136  0x88        -     https://github.com/CryptoManiac/novacoin
 ONECOIN             115  0x73  o      243  0xF3        -     https://github.com/cre8r/onecoin
 PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
-ROYALCOIN                                              -     http://sourceforge.net/projects/royalcoin/
+ROYALCOIN                   ?                 ?        -     http://sourceforge.net/projects/royalcoin/
 SMALLCHANGE          62  0x3E  S      190  0xBE        -     https://github.com/bfroemel/smallchange
-TERRACOIN                                              -     https://github.com/terracoin/terracoin
+TERRACOIN             0  0x00  1      128  0x80  5     -     *B https://github.com/terracoin/terracoin
 YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
                     Pub   Pub  Pub   Priv  Priv  Priv
@@ -66,29 +66,18 @@ Coin                Dec   Hex  lead   Dec   Hex  lead  test  note
 BITCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     OK
 BBQCOIN TESTNET      25  0x19         153  0x99        -
 BITBAR TESTNET      115  0x73         243  0xF3        -
-BYTECOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
-CHNCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
-DEVCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
-FAIRBRIX TESTENET                                      -
-FEATHERCOIN TESTNET 111  0x6F  m,n    239  0xEF  9     -     *BT
-IXCOIN TESTNET                                         -
-FREICOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
-JUNKCOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
-LITECOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
-MINCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
-NAMECOIN TESTNET                                       -
-NOVACOIN TESTNET    111  0x6F  m,n    239  0xEF  9     -     *BT
-ONECOIN TESTNET     111  0x6F  m,n    239  0xEF  9     -     *BT
-PPCOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
-ROYALCOIN TESTNET                                      -
-TERRACOIN TESTNET                                      -
-SMALLCHANGE TESTNET 111  0x6F  m,n    239  0xEF  9     -     *BT
-YACOIN TESTNET      111  0x6F  m,n    239  0xEF  9     -     *BT
+FAIRBRIX TESTENET           ?                 ?        -
+IXCOIN TESTNET              ?                 ?        -
+NAMECOIN TESTNET            ?                 ?        -
+ROYALCOIN TESTNET           ?                 ?        -
+
+TESTNET Coins using BITCOIN TESTNET prefixes:
+BYTECOIN, CHNCOIN, DEVCOIN, FEATHERCOIN, FREICOIN, JUNKCOIN, LITECOIN
+MINCOIN, NOVACOIN, ONECOIN, PPCOIN, TERRACOIN, SMALLCHANGE, YACOIN
 
 Notes:
 ** All prefixes are for uncompressed keys
 *B = uses BITCOIN prefixes
-*BT = uses BITCOIN TEST prefixes
 
 </pre>
 
