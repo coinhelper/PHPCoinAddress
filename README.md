@@ -66,7 +66,7 @@ MINCOIN              50  0x32  m      178  0xB2        -     https://github.com/
 NAMECOIN             52  0x34  M,N    180  0xB4  7     -     https://github.com/namecoin/namecoin
 NOVACOIN              8  0x08         136  0x88        -     https://github.com/CryptoManiac/novacoin
 ONECOIN             115  0x73  o      243  0xF3        -     https://github.com/cre8r/onecoin
-PPCOIN               55  0x37         183  0xB7        -     https://github.com/ppcoin/ppcoin
+PPCOIN               55  0x37         183  0xB7        OK    https://github.com/ppcoin/ppcoin
 ROYALCOIN                   ?                 ?        -     http://sourceforge.net/projects/royalcoin/
 SMALLCHANGE          62  0x3E  S      190  0xBE        -     https://github.com/bfroemel/smallchange
 TERRACOIN             0  0x00  1      128  0x80  5     -     https://github.com/terracoin/terracoin
