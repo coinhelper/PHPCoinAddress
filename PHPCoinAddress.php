@@ -151,7 +151,7 @@ class CoinAddress {
     public static function onecoin() {  self::$prefix_public = '0x73'; self::$prefix_private = '0xF3'; return self::get_address(); }
     public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
     //public static function royalcoin() { self::$prefix_public = '0x??'; self::$prefix_private = '0x??'; return self::get_address(); }
-    public static function smallchange() { self::$prefix_public = '0x3E;  self::$prefix_private = "0xBE"; return self::get_address(); }
+    public static function smallchange() { self::$prefix_public = '0x3E';  self::$prefix_private = '0xBE'; return self::get_address(); }
     public static function terracoin() { return self::bitcoin(); }
     public static function yacoin() { self::$prefix_public = '0x4D'; self::$prefix_private = '0xCD'; return self::get_address(); }
 
