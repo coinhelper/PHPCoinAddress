@@ -34,28 +34,30 @@ Notes:
 
 Prefix List:
 =============
-Key:
+<pre>Key:
 Pub Dec = Prefix for Public Key, Decimal
 Pub Hex = Prefix for Public Key, Hexadecimal
 Pub lead = leading character in Public Key
 Priv Dec = Prefix for Private Key, Decimal 
 Priv Hex = Prefix for Private Key, Hexadecimal
 Priv lead = leading character in Private Key (Wallet Import Format)
+test = Test results for importing PHPCoinAddress created keys into standard client
+src = official source code repository
 
 Note: prefixes are for uncompressed keys
-<pre>
+
                     Pub   Pub  Pub   Priv  Priv  Priv
-Coin                Dec   Hex  lead   Dec   Hex  lead  test  note
+Coin                Dec   Hex  lead   Dec   Hex  lead  test  src
 =================  ====  ====  ====  ====  ====  ====  ====  ====
 BITCOIN               0  0x00  1      128  0x80  5     OK    https://github.com/bitcoin/bitcoin
 BBQCOIN              85  0x05  L      213  0xD5        -     https://github.com/overware/BBQCoin
 BITBAR               25  0x19         153  0x99        -     https://github.com/aLQ/bitbar
 BYTECOIN             18  0x12         128  0x80        -     https://github.com/bryan-mills/bytecoin
 CHNCOIN              28  0x1C         156  0x9C        -     https://github.com/CHNCoin/CHNCoin
-DEVCOIN               0  0x00  1      128  0x80  5     -     *B http://sourceforge.net/projects/galacticmilieu/files/DeVCoin/
+DEVCOIN               0  0x00  1      128  0x80  5     -     http://sourceforge.net/projects/galacticmilieu/files/DeVCoin/
 FAIRBRIX                    ?                 ?        -     https://github.com/coblee/Fairbrix
 FEATHERCOIN          14  0x0E         142  0x8E        -     https://github.com/FeatherCoin/FeatherCoin
-FREICOIN              0  0x00  1      128  0x80  5     -     *B https://github.com/freicoin/freicoin
+FREICOIN              0  0x00  1      128  0x80  5     -     https://github.com/freicoin/freicoin
 IXCOIN                      ?                 ?        -     https://github.com/ixcoin/ixcoin
 JUNKCOIN             16  0x10  7      144  0x90  5     OK    https://github.com/js2082/JKC
 LITECOIN             48  0x30  L      176  0xB0  6     OK    https://github.com/litecoin-project/litecoin
@@ -69,9 +71,9 @@ SMALLCHANGE          62  0x3E  S      190  0xBE        -     https://github.com/
 TERRACOIN             0  0x00  1      128  0x80  5     -     *B https://github.com/terracoin/terracoin
 YACOIN               77  0x4D         205  0xCD        -     https://github.com/pocopoco/yacoin
 
-                    Pub   Pub  Pub   Priv  Priv  Priv
-Coin                Dec   Hex  lead   Dec   Hex  lead  test  note
-=================  ====  ====  ====  ====  ====  ====  ====  ====
+                    Pub   Pub   Pub  Priv  Priv  Priv
+TESTNET Coin        Dec   Hex  lead   Dec   Hex  lead  test 
+=================  ====  ====  ====  ====  ====  ====  ==== 
 BITCOIN TESTNET     111  0x6F  m,n    239  0xEF  9     OK
 BBQCOIN TESTNET      25  0x19         153  0x99        -
 BITBAR TESTNET      115  0x73         243  0xF3        -
