@@ -1,5 +1,5 @@
 <?php
-// PHPCoinAddress test 
+// PHPCoinAddress test
 
 $version = '0.1.9.pre';
 
@@ -23,10 +23,10 @@ $coin = CoinAddress::bitbar();           coin_info('Bitbar', $coin);
 $coin = CoinAddress::bytecoin();         coin_info('Bytecoin', $coin);
 $coin = CoinAddress::chncoin();          coin_info('CHNcoin', $coin);
 $coin = CoinAddress::devcoin();          coin_info('Devcoin', $coin);
-//$coin = CoinAddress::fairbrix();         coin_info('Fairbrix', $coin);
+//$coin = CoinAddress::fairbrix();       coin_info('Fairbrix', $coin);
 $coin = CoinAddress::feathercoin();      coin_info('Feathercoin', $coin);
 $coin = CoinAddress::freicoin();         coin_info('Freicoin', $coin);
-//$coin = CoinAddress::ixcoin();           coin_info('IXcoin', $coin);
+//$coin = CoinAddress::ixcoin();         coin_info('IXcoin', $coin);
 $coin = CoinAddress::junkcoin();         coin_info('Junkcoin', $coin);
 $coin = CoinAddress::litecoin();         coin_info('Litecoin', $coin);
 $coin = CoinAddress::mincoin();          coin_info('Mincoin', $coin);
@@ -34,21 +34,19 @@ $coin = CoinAddress::namecoin();         coin_info('Namecoin', $coin);
 $coin = CoinAddress::novacoin();         coin_info('Novacoin', $coin);
 $coin = CoinAddress::onecoin();          coin_info('Onecoin', $coin);
 $coin = CoinAddress::ppcoin();           coin_info('PPCoin', $coin);
-//$coin = CoinAddress::royalcoin();        coin_info('Royalcoin', $coin);
+//$coin = CoinAddress::royalcoin();      coin_info('Royalcoin', $coin);
 $coin = CoinAddress::smallchange();      coin_info('Smallchange', $coin);
 $coin = CoinAddress::terracoin();        coin_info('Terracoin', $coin);
 $coin = CoinAddress::yacoin();           coin_info('Yacoin', $coin);
 
-
 $coin = CoinAddress::bitcoin_testnet();     coin_info('Bitcoin Testnet', $coin);
 $coin = CoinAddress::bbqcoin_testnet();     coin_info('BBQcoin Testnet', $coin);
-$coin = CoinAddress::bitbar_testnet();     coin_info('Bitbar Testnet', $coin);
+$coin = CoinAddress::bitbar_testnet();      coin_info('Bitbar Testnet', $coin);
 // all other coin testnets uses Bitcoin prefixes
 
 $public_prefix  = '0x' . dechex( mt_rand(0,255) );
 $private_prefix = '0x' . dechex( mt_rand(0,255) );
-$coin = CoinAddress::generic( $public_prefix, $private_prefix);  
-coin_info("[Random: public_prefix: $public_prefix  private_prefix: $private_prefix]", $coin);
+$coin = CoinAddress::generic( $public_prefix, $private_prefix);  coin_info('Random', $coin);
 
 // END TEST
 
@@ -61,7 +59,9 @@ exit;
 
 //////////////////////////////////////////////
 function coin_info($name,$coin) {
-    print "\n$name:\n";
+    print "\n$name";
+    print " [ prefix_public: " . CoinAddress::$prefix_public;
+    print "  prefix_private: " . CoinAddress::$prefix_private . " ]\n";
     print 'public (base58): ' . $coin['public'] . "\n";
     print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
     print 'private (WIF)  : ' . $coin['private'] . "\n";
