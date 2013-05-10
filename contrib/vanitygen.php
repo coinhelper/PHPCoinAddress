@@ -11,7 +11,7 @@ CoinAddress::set_reuse_keys(false);
 
 $coin_type = 'bitcoin';
 
-$pattern = '/^1CA/';
+$pattern = '/^1x/';
 
 $stop = false;
 $count = 0;
