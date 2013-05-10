@@ -252,9 +252,9 @@ class CoinAddress {
         self::$key_pair_private_hex = bin2hex($privBin);
 
         self::$key_pair_compressed_public = hash('ripemd160', hash('sha256', $pubBinStrCompressed, true), true);
-        self::$key_pair_compressed_public_hex = bin2hex( $pubBinStrCompressed );
-        self::$key_pair_compressed_private = self::base58check_encode( self::$prefix_private, $privBin, 0x01);
-        self::$key_pair_compressed_private_hex = '';
+        self::$key_pair_compressed_public_hex = bin2hex($pubBinStrCompressed);
+        self::$key_pair_compressed_private = self::base58check_encode(self::$prefix_private, $privBin, 0x01);
+        self::$key_pair_compressed_private_hex = self::$key_pair_private_hex;
 
     } // end create_key_pair
 
