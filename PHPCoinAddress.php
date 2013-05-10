@@ -4,7 +4,7 @@
 PHPCoinAddress is a PHP object that creates public/private address key pairs for:
 Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
-Version 0.1.9
+Version 0.2.0.pre
 
 * Info: https://github.com/zamgo/PHPCoinAddress
 * Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
@@ -125,6 +125,10 @@ class CoinAddress {
     public static $key_pair_private_hex;
     public static $key_pair_public;
     public static $key_pair_public_hex;
+    public static $key_pair_compressed_private;
+    public static $key_pair_compressed_private_hex;
+    public static $key_pair_compressed_public;
+    public static $key_pair_compressed_public_hex;    
     public static $prefix_private;
     public static $prefix_public;
 
@@ -203,6 +207,11 @@ class CoinAddress {
            'public_hex'  => self::$key_pair_public_hex,
            'private'     => self::base58check_encode( self::$prefix_private, self::$key_pair_private ),
            'private_hex' => self::$key_pair_private_hex,
+
+           'public_compressed'      => self::base58check_encode( self::$prefix_public,  self::$key_pair_compressed_public ),
+           'public_compressed_hex'  => self::$key_pair_compressed_public_hex,
+           'private_compressed'     => self::$key_pair_compressed_private,
+           'private_compressed_hex' => self::$key_pair_compressed_private_hex,
         );
     } // end get_address
 
@@ -226,15 +235,27 @@ class CoinAddress {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static function create_key_pair() {
+
         $privBin = '';
         for ($i = 0; $i < 32; $i++) { $privBin .= chr(mt_rand(0, $i ? 0xff : 0xfe)); }
         $point = Point::mul(bcmath_Utils::bin2bc("\x00" . $privBin), self::$secp256k1_G);
+
         $pubBinStr = "\x04" . str_pad(bcmath_Utils::bc2bin($point->getX()), 32, "\x00", STR_PAD_LEFT)
             . str_pad(bcmath_Utils::bc2bin($point->getY()), 32, "\x00", STR_PAD_LEFT);
+
+        $pubBinStrCompressed = (intval(substr($point->getY(), -1, 1)) % 2 == 0 ? "\x02" : "\x03")
+            . str_pad(bcmath_Utils::bc2bin($point->getX()), 32, "\x00", STR_PAD_LEFT);
+
         self::$key_pair_public = hash('ripemd160', hash('sha256', $pubBinStr, true), true);
         self::$key_pair_public_hex = bin2hex($pubBinStr);
         self::$key_pair_private = $privBin;
         self::$key_pair_private_hex = bin2hex($privBin);
+
+        self::$key_pair_compressed_public = hash('ripemd160', hash('sha256', $pubBinStrCompressed, true), true);
+        self::$key_pair_compressed_public_hex = bin2hex( $pubBinStrCompressed );
+        self::$key_pair_compressed_private = self::base58check_encode( self::$prefix_private, $privBin, 0x01);
+        self::$key_pair_compressed_private_hex = '';
+
     } // end create_key_pair
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
