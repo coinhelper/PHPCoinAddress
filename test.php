@@ -1,7 +1,7 @@
 <?php
 // PHPCoinAddress test
 
-$version = '0.1.9';
+$version = '0.2.0.pre';
 
 print "\nTEST: PHPCoinAddress $version\n";
 
@@ -62,9 +62,16 @@ function coin_info($name,$coin) {
     print "\n$name";
     print " [ prefix_public: " . CoinAddress::$prefix_public;
     print "  prefix_private: " . CoinAddress::$prefix_private . " ]\n";
+    print "uncompressed:\n";
     print 'public (base58): ' . $coin['public'] . "\n";
     print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
     print 'private (WIF)  : ' . $coin['private'] . "\n";
     print 'private (Hex)  : ' . $coin['private_hex'] . "\n";
+    print "compressed:\n";
+    print 'public (base58): ' . $coin['public_compressed'] . "\n";
+    print 'public (Hex)   : ' . $coin['public_compressed_hex'] . "\n";
+    print 'private (WIF)  : ' . $coin['private_compressed'] . "\n";
+    print 'private (Hex)  : ' . $coin['private_compressed_hex'] . "\n";
 }
+
 
